@@ -10,6 +10,8 @@ server.use(express.static("public")) // Guardando conteúdo na pasta public
 
 server.set('views', path.join(__dirname, 'views')) // Path pega o caminho da pasta aonde está o projeto. __dirname = src/
 
+server.use(express.urlencoded({extended: true}))
+
 server.use(route) // " use --> Express use o arquivo 'route' "
 
 server.listen(3000, () => console.log("RODANDO")) // Terminal
